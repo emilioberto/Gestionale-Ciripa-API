@@ -1,7 +1,13 @@
 import { Module } from '@nestjs/common';
-import { KidController } from './kid.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { KidController } from 'src/kid/kid.controller';
+import { KidService } from 'src/shared/services/kid.service';
+import { Kid } from 'src/shared/models/kid.entity';
 
 @Module({
-  controllers: [KidController]
+  imports: [TypeOrmModule.forFeature([Kid])],
+  controllers: [KidController],
+  providers: [KidService],
 })
-export class KidModule {}
+export class KidModule { }
