@@ -1,4 +1,4 @@
-import { Column, PrimaryGeneratedColumn, ManyToOne, Entity } from 'typeorm';
+import { Column, PrimaryGeneratedColumn, ManyToOne, Entity, CreateDateColumn } from 'typeorm';
 
 import { Kid } from 'src/shared/models/kid.entity';
 
@@ -8,14 +8,14 @@ export class Presence {
   id: number;
   @ManyToOne(type => Kid, kid => kid.presencesList, { onDelete: 'CASCADE' })
   kid: Kid;
-  @Column()
+  @Column({ type: 'date', nullable: true })
   date: Date;
-  @Column({ nullable: true })
+  @Column({ type: 'date', nullable: true })
   morningEntry: Date;
-  @Column({ nullable: true })
+  @Column({ type: 'date', nullable: true })
   morningExit: Date;
-  @Column({ nullable: true })
+  @Column({ type: 'date', nullable: true })
   eveningEntry: Date;
-  @Column({ nullable: true })
+  @Column({ type: 'date', nullable: true })
   eveningExit: Date;
 }
