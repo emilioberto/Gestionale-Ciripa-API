@@ -7,7 +7,7 @@ import { PaymentMethod } from 'src/shared/models/payment-method.entity';
 @Entity()
 export class Kid {
   @PrimaryGeneratedColumn()
-  id: ObjectID;
+  id: number;
   @Column()
   firstName: string;
   @Column()
@@ -22,6 +22,8 @@ export class Kid {
   to: Date;
   @Column()
   contractType: ContractType;
+  @Column({ nullable: true })
+  contractValue: number;
   @Column()
   notes: string;
   @Column()

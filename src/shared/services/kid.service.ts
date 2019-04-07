@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, DeleteResult, UpdateResult } from 'typeorm';
+import { Repository, DeleteResult, UpdateResult, createQueryBuilder } from 'typeorm';
 
 import { Kid } from 'src/shared/models/kid.entity';
 
@@ -26,10 +26,18 @@ export class KidService {
       return await this.kidRepository.update(kid.id, updatedKid);
     }
     return await this.kidRepository.save(kid).catch(err => { throw Error(err); });
-
   }
 
   async deleteKid(kidId: string): Promise<DeleteResult> {
     return await this.kidRepository.delete(kidId);
+  }
+
+  async presencesSummary(kidId: number, month: number, year: number): Promise<Kid> {
+    const kid = await createQueryBuilder(Kid, 'kid')
+      .where('kid.id = :kidId', { kidId })
+      .leftJoinAndSelect('kid.presencesList', 'presence', 'presence.month = :month and presence.year = :year', { month, year })
+      .getOne() as Kid;
+
+    return kid;
   }
 }

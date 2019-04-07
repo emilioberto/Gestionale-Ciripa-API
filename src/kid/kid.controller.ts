@@ -32,4 +32,8 @@ export class KidController {
     return this.kidService.deleteKid(id);
   }
 
+  @Get('presences-summary/:kidId/:month/:year')
+  async getPresencesSummary(@Param('kidId') kidId: number, @Param('month') month: number, @Param('year') year: number): Promise<Kid> {
+    return this.kidService.presencesSummary(+kidId, +month, +year);
+  }
 }
