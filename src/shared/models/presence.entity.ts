@@ -1,6 +1,6 @@
-import { Column, PrimaryGeneratedColumn, ManyToOne, Entity, CreateDateColumn } from 'typeorm';
+import { Column, PrimaryGeneratedColumn, ManyToOne, Entity } from 'typeorm';
 
-import { Kid } from 'src/shared/models/kid.entity';
+import { Kid } from './kid.entity';
 
 @Entity()
 export class Presence {

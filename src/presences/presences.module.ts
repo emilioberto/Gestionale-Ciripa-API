@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Kid } from 'src/shared/models/kid.entity';
-import { PresencesService } from 'src/shared/services/presences.service';
-import { PresencesController } from 'src/presences/presences.controller';
-import { Presence } from 'src/shared/models/presence.entity';
+import { Presence } from '../shared/models/presence.entity';
+import { Kid } from '../shared/models/kid.entity';
+import { PresencesController } from './presences.controller';
+import { PresencesService } from '../shared/services/presences.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Kid, Presence])],

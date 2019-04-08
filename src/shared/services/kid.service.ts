@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DeleteResult, UpdateResult, createQueryBuilder } from 'typeorm';
 
-import { Kid } from 'src/shared/models/kid.entity';
+import { Kid } from '../models/kid.entity';
 
 @Injectable()
 export class KidService {

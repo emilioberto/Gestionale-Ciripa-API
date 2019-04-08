@@ -1,9 +1,9 @@
-import { Controller, Get, Param, Post, Put, Body, Delete } from '@nestjs/common';
+import { Controller, Get, Param, Put, Body, Delete } from '@nestjs/common';
 
 import { DeleteResult, UpdateResult } from 'typeorm';
 
-import { KidService } from 'src/shared/services/kid.service';
-import { Kid } from 'src/shared/models/kid.entity';
+import { Kid } from '../shared/models/kid.entity';
+import { KidService } from '../shared/services/kid.service';
 
 @Controller('kid')
 export class KidController {

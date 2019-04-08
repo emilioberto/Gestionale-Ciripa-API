@@ -4,9 +4,9 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { Repository, createQueryBuilder } from 'typeorm';
 
-import { User } from 'src/shared/models/user.entity';
 import * as bcrypt from 'bcrypt';
-import { JwtPayload } from 'src/shared/interfaces/jwt-payload';
+import { User } from '../shared/models/user.entity';
+import { JwtPayload } from '../shared/interfaces/jwt-payload';
 
 @Injectable()
 export class AuthenticationService {

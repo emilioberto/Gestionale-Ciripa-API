@@ -1,10 +1,9 @@
 import { Controller, Get, Param, Put, Body } from '@nestjs/common';
 
-import { UpdateResult } from 'typeorm';
+import { PresencesService } from '../shared/services/presences.service';
+import { Presence } from '../shared/models/presence.entity';
 
-import { PresencesService } from 'src/shared/services/presences.service';
-import { Presence } from 'src/shared/models/presence.entity';
-import { Kid } from 'src/shared/models/kid.entity';
+import { UpdateResult } from 'typeorm';
 
 @Controller('presences')
 export class PresencesController {

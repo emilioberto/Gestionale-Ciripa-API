@@ -1,8 +1,8 @@
 import { Controller, Get, Put, Body } from '@nestjs/common';
 import { UpdateResult } from 'typeorm';
 
-import { Settings } from 'src/shared/models/settings.entity';
-import { SettingsService } from 'src/shared/services/settings.service';
+import { SettingsService } from '../shared/services/settings.service';
+import { Settings } from '../shared/models/settings.entity';
 
 @Controller('settings')
 export class SettingsController {

@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, createQueryBuilder, UpdateResult } from 'typeorm';
 
-import { Kid } from 'src/shared/models/kid.entity';
-import { Presence } from 'src/shared/models/presence.entity';
+import { Presence } from '../models/presence.entity';
+import { Kid } from '../models/kid.entity';
 
 @Injectable()
 export class PresencesService {

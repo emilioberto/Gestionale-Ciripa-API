@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { KidController } from 'src/kid/kid.controller';
-import { KidService } from 'src/shared/services/kid.service';
-import { Kid } from 'src/shared/models/kid.entity';
+import { Kid } from '../shared/models/kid.entity';
+import { KidController } from './kid.controller';
+import { KidService } from '../shared/services/kid.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Kid])],

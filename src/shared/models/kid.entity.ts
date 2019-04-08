@@ -1,8 +1,8 @@
 import { Entity, Column, ObjectID, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
-import { ContractType } from 'src/shared/models/contract-type.entity';
-import { Presence } from 'src/shared/models/presence.entity';
-import { PaymentMethod } from 'src/shared/models/payment-method.entity';
+import { PaymentMethod } from './payment-method.entity';
+import { ContractType } from './contract-type.entity';
+import { Presence } from './presence.entity';
 
 @Entity()
 export class Kid {

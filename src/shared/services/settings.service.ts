@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult } from 'typeorm';
 
-import { Settings } from 'src/shared/models/settings.entity';
+import { Settings } from '../models/settings.entity';
 
 @Injectable()
 export class SettingsService {
