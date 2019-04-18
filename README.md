@@ -1,6 +1,6 @@
 REST API per gestionale asilo nido Ciripà.
 
-### API REST utilizzando il framework NEST.JS
+### API REST utilizzando il framework NEST.JS e database SQLITE 
 
 
 <p align="center">
